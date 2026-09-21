@@ -11,7 +11,7 @@ const content = ref<AboutContent | null>(null);
 const isLoading = ref(true);
 const error = ref<string | null>(null);
 
-const { isVisible } = useScrollReveal();
+const { element: sectionEl, isVisible } = useScrollReveal();
 
 async function fetchData() {
   isLoading.value = true;
@@ -30,7 +30,7 @@ onMounted(fetchData);
 
 <template>
   <section
-    ref="sectionEl"
+    :ref="(el) => { sectionEl = el as HTMLElement }"
     id="tentang"
     class="section-pad-lg bg-cream-100"
   >

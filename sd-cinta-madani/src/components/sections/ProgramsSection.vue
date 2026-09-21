@@ -100,8 +100,7 @@ onMounted(fetchData);
         <div
           :style="{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 500ms var(--ease-out)',
+            transition: 'opacity 500ms var(--ease-out)',
           }"
         >
           <SectionLabel :index="sectionNumber" :label="sectionLabel" />
@@ -121,8 +120,7 @@ onMounted(fetchData);
             :class="index === 0 ? 'row-span-2' : ''"
             :style="{
               opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(24px)',
-              transition: `all 600ms var(--ease-out) ${100 + index * 100}ms`,
+              transition: `opacity 600ms var(--ease-out) ${100 + index * 100}ms`,
             }"
           >
             <!-- Background image -->
@@ -160,8 +158,7 @@ onMounted(fetchData);
             class="group relative rounded-[16px] overflow-hidden"
             :style="{
               opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: `all 400ms var(--ease-out) ${index * 60}ms`,
+              transition: `opacity 400ms var(--ease-out) ${index * 60}ms`,
             }"
           >
             <div class="relative h-44">

@@ -62,7 +62,7 @@ onMounted(fetchData);
   <section
     id="nilai"
     :ref="(el) => { sectionEl = el as HTMLElement }"
-    class="section-pad bg-background"
+    class="py-12 md:py-16 lg:py-20 bg-background"
   >
     <div class="container-site">
       <!-- Loading -->
@@ -89,8 +89,7 @@ onMounted(fetchData);
         <div
           :style="{
             opacity: isVisible ? 1 : 0,
-            transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'all 500ms var(--ease-out)',
+            transition: 'opacity 500ms var(--ease-out)',
           }"
         >
           <SectionLabel :index="sectionNumber" :label="sectionLabel" />
@@ -109,8 +108,7 @@ onMounted(fetchData);
               : 'bg-surface border-line-light hover:border-primary/20 hover:shadow-sm'"
             :style="{
               opacity: isVisible ? 1 : 0,
-              transform: isVisible ? 'translateY(0)' : 'translateY(16px)',
-              transition: `all 500ms var(--ease-out) ${200 + index * 80}ms`,
+              transition: `opacity 500ms var(--ease-out) ${200 + index * 80}ms`,
             }"
             :aria-expanded="activeIndex === index"
             :aria-label="`Nilai: ${item.title}`"
